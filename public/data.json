@@ -2,22 +2,49 @@
     "products": [
       {
         "id": 1,
-        "name": "Product 1",
+        "name": "Dekor Çiçekler",
         "description": "Description for product 1",
-        "price": 100
+        "img":"images/product4-555x615.jpg",
+        "price": 55
       },
       {
         "id": 2,
-        "name": "Product 2",
+        "name": "Love Yazılı Balon",
         "description": "Description for product 2",
-        "price": 200
+        "img":"images/product1-555x615.jpg",
+        "price": 65
       },
       {
         "id": 3,
-        "name": "Product 3",
+        "name": "Metal Kek Standı",
         "description": "Description for product 3",
-        "price": 300
+        "img":"images/product2-555x615.jpg",
+        "price": 57
+      },
+      {
+        "id": 4,
+        "name": "Düğün Buketleri",
+        "description": "Description for product 3",
+        "img":"images/product5-555x615.jpg",
+        "price": 112
+      },
+      {
+        "id": 5,
+        "name": "Düğün Mumları",
+        "description": "Description for product 3",
+        "img":"images/product3-555x615.jpg",
+        "price": 45
+      },
+      {
+        "id": 6,
+        "name": "Işıklı Yazılar",
+        "description": "Description for product 3",
+        "img":"images/product6-555x615.jpg",
+        "price": 130
       }
+    ],
+    "sepet":[
+    
     ],
     "categories": [
       {
