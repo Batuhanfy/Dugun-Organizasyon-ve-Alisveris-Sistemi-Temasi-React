@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchProduct, filterProductsByPrice } from '../store/productsSlice';
+import { fetchProduct, filterProductsByPrice ,setSortOrder, sortProducts} from '../store/productsSlice';
 import { useEffect } from 'react';
 import { sepetEkle, fetchSepet, sepetSil } from '../store/sepetSlice';
-
+import Swal from 'sweetalert2';
 import Notie from 'notie';
 import 'notie/dist/notie.css';
 
@@ -16,7 +16,7 @@ export default function Shop() {
 
     const filtreleHandler = (e) => {
         e.preventDefault();
-        if(minPrice >maxPrice){
+        if(Number(minPrice) > Number(maxPrice)){
             Swal.fire({
                 title: 'Hata!',
                 text: 'Fiyat filtrelerken min fiyat daha az olmalıdır.',
@@ -24,7 +24,15 @@ export default function Shop() {
                 confirmButtonText: 'Tamam'
               });
               
-        }else {
+        }else if(minPrice == "" && maxPrice == ""){
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Fiyat bilgisi giriniz.',
+                icon: 'error',
+                confirmButtonText: 'Tamam'
+              });
+        }
+        else{
             dispatch(filterProductsByPrice({ minPrice: Number(minPrice), maxPrice: Number(maxPrice) }));
 
         }
@@ -57,6 +65,19 @@ export default function Shop() {
         dispatch(sepetSil(product));
     }
 
+    const handleSortChange = (event) => {
+        const newSortOrder = event.target.value;
+        dispatch(setSortOrder(newSortOrder));
+        dispatch(sortProducts());
+      };
+
+      const sortOrder = useSelector((state) => state.product.sortOrder);
+
+      const kategorisec = (categoryName)=>{
+       console.log(categoryName);
+       dispatch(kategorifiltresi(categoryName))
+      }
+
     return (
 
         <>
@@ -80,15 +101,15 @@ export default function Shop() {
                                                 <a href="shop.html" className="woocommerce_thumbs icon-th" title="Show products as thumbs"></a><a href="shop-list.html" className="woocommerce_list icon-th-list" title="Show products as list"></a>
                                             </form>
                                         </div>
-                                        <p className="woocommerce-result-count"> Showing all 6 results</p>
+                                        <p className="woocommerce-result-count"> Toplamda {urunler.length} sonuç gösteriliyor.</p>
                                         <form className="woocommerce-ordering" method="get">
-                                            <select name="orderby" className="orderby">
-                                                <option value="menu_order" selected='selected'>Default sorting</option>
-                                                <option value="popularity">Sort by popularity</option>
-                                                <option value="rating">Sort by average rating</option>
-                                                <option value="date">Sort by newness</option>
-                                                <option value="price">Sort by price: low to high</option>
-                                                <option value="price-desc">Sort by price: high to low</option>
+                                        <select name="orderby" className="orderby" value={sortOrder} onChange={handleSortChange}>
+                                                <option value="menu_order" selected='selected'>Varsayılan sıralama</option>
+                                                <option value="popularity">Popülerliğe Göre</option>
+                                                <option value="rating">Ürün derecesine göre</option>
+                                                <option value="date">Tarihe göre en yeni</option>
+                                                <option value="price">En ucuzdan Pahalıya</option>
+                                                <option value="price-desc">En pahalıdan Ucuza</option>
                                             </select>
                                         </form>
                                         <ul className="products">
@@ -194,12 +215,12 @@ export default function Shop() {
                                         </aside><aside id="woocommerce_product_categories-2" className="widget woocommerce widget_product_categories">
                                             <h5 className="widget_title">Product Categories</h5>
                                             <ul className="product-categories">
-                                                <li className="cat-item"><a href="#">Balloons</a></li>
-                                                <li className="cat-item"><a href="#">Bouquets</a></li>
-                                                <li className="cat-item"><a href="#">Dessert Stands</a></li>
-                                                <li className="cat-item"><a href="#">Flower Decor</a></li>
-                                                <li className="cat-item"><a href="#">Lights &amp; Candles</a></li>
-                                                <li className="cat-item"><a href="#">Signs &amp; Signatures</a></li>
+                                                <li className="cat-item" onClick={()=>{kategorisec("Balloons")}}><a href="#">Balloons</a></li>
+                                                <li className="cat-item" onClick={()=>{kategorisec("Bouquets")}}><a href="#">Bouquets</a></li>
+                                                <li className="cat-item" onClick={()=>{kategorisec("DessertStands")}}><a href="#">Dessert Stands</a></li>
+                                                <li className="cat-item" onClick={()=>{kategorisec("FlowerDecor")}}><a href="#">Flower Decor</a></li>
+                                                <li className="cat-item" onClick={()=>{kategorisec("LightsCandles")}}><a href="#">Lights &amp; Candles</a></li>
+                                                <li className="cat-item" onClick={()=>{kategorisec("SignsSignatures")}}><a href="#">Signs &amp; Signatures</a></li>
                                             </ul>
                                         </aside>
                                     </div>

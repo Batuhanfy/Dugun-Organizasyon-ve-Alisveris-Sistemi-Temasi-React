@@ -1,48 +1,80 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Dekor Çiçekler",
-        "description": "Description for product 1",
-        "img":"images/product4-555x615.jpg",
-        "price": 55
-      },
-      {
-        "id": 2,
-        "name": "Love Yazılı Balon",
-        "description": "Description for product 2",
-        "img":"images/product1-555x615.jpg",
-        "price": 65
-      },
-      {
-        "id": 3,
-        "name": "Metal Kek Standı",
-        "description": "Description for product 3",
-        "img":"images/product2-555x615.jpg",
-        "price": 57
-      },
-      {
-        "id": 4,
-        "name": "Düğün Buketleri",
-        "description": "Description for product 3",
-        "img":"images/product5-555x615.jpg",
-        "price": 112
-      },
-      {
-        "id": 5,
-        "name": "Düğün Mumları",
-        "description": "Description for product 3",
-        "img":"images/product3-555x615.jpg",
-        "price": 45
-      },
-      {
-        "id": 6,
-        "name": "Işıklı Yazılar",
-        "description": "Description for product 3",
-        "img":"images/product6-555x615.jpg",
-        "price": 130
-      }
-    ],
+  
+  "products": [
+    {
+      "id": 1,
+      "name": "Dekor Çiçekler",
+      "description": "Description for product 1",
+      "img": "images/product4-555x615.jpg",
+      "price": 55,
+      "popularity": 82,
+      "rating": 4.5,
+      "date": "2024-01-15",
+      "discount": 50,
+      "category": "Flower Decor"
+    },
+    {
+      "id": 2,
+      "name": "Love Yazılı Balon",
+      "description": "Description for product 2",
+      "img": "images/product1-555x615.jpg",
+      "price": 65,
+      "popularity": 91,
+      "rating": 4.8,
+      "date": "2024-02-20",
+      "discount": 60,
+      "category": "Balloons"
+    },
+    {
+      "id": 3,
+      "name": "Metal Kek Standı",
+      "description": "Description for product 3",
+      "img": "images/product2-555x615.jpg",
+      "price": 57,
+      "popularity": 76,
+      "rating": 4.2,
+      "date": "2024-03-10",
+      "discount": 50,
+      "category": "Dessert Stands"
+    },
+    {
+      "id": 4,
+      "name": "Düğün Buketleri",
+      "description": "Description for product 4",
+      "img": "images/product5-555x615.jpg",
+      "price": 112,
+      "popularity": 65,
+      "rating": 4.6,
+      "date": "2024-04-05",
+      "discount": 100,
+      "category": "Bouquets"
+    },
+    {
+      "id": 5,
+      "name": "Düğün Mumları",
+      "description": "Description for product 5",
+      "img": "images/product3-555x615.jpg",
+      "price": 45,
+      "popularity": 58,
+      "rating": 4.0,
+      "date": "2024-05-25",
+      "discount": 40,
+      "category": "Lights & Candles"
+    },
+    {
+      "id": 6,
+      "name": "Işıklı Yazılar",
+      "description": "Description for product 6",
+      "img": "images/product6-555x615.jpg",
+      "price": 130,
+      "popularity": 89,
+      "rating": 4.9,
+      "date": "2024-06-15",
+      "discount": 120,
+      "category": "Signs & Signatures"
+    }
+  ],
+  
     "sepet":[
     
     ],
