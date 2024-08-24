@@ -3486,6 +3486,7 @@ li.opened > a > .open_child_menu:before {
 }
 .header_mobile .side_wrap.open{
 	left: 0;
+	background:white;
 }
 .header_mobile .side_wrap .close {
     position: absolute;

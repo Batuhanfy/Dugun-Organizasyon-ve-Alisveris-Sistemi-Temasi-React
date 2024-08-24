@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
@@ -61,22 +62,22 @@ export default function Header() {
                             <nav className="menu_main_nav_area menu_hover_fade">
                                 <ul id="menu_main" className="menu_main_nav">
                                     <li className="menu-item ">
-                                        <a href="#"><span>Anasayfa</span></a>
+                                    <Link to="/"><span>Anasayfa</span></Link>
                                        
                                     </li>
-                                    <li className="menu-item"><Link to="/AboutUs"><span>Hakkımızda</span></Link>
+                                    <li className="menu-item"><Link to="/about-us"><span>Hakkımızda</span></Link>
                                        
                                     </li>
                                   
-                                    <li className="menu-item"><a href="shop.html"><span>MAĞAZA</span></a></li>
-                                    <li className="menu-item"><a href="our-team.html"><span>EKİBİMİZ</span></a></li>
-                                    <li className="menu-item "><a href="#"><span>HİZMETLERİMİZ</span></a>
+                                    <li className="menu-item">  <Link to="/shop"><span>MAĞAZA</span></Link></li>
+                                    <li className="menu-item">  <Link to="/our-team"><span>EKİBİMİZ</span></Link></li>
+                                    <li className="menu-item ">  <Link to="/our-services"><span>HİZMETLERİMİZ</span></Link>
                                        
                                     </li>
-                                    <li className="menu-item "><a href="#"><span>Blog</span></a>
+                                    <li className="menu-item ">  <Link to="/blogs"><span>Blog</span></Link>
                                        
                                     </li>
-                                    <li className="menu-item"><a href="contacts.html"><span>İLETİŞİM</span></a></li>
+                                    <li className="menu-item">  <Link to="/contact"><span>İLETİŞİM</span></Link></li>
                                 </ul>
                             </nav>
                         </div>
