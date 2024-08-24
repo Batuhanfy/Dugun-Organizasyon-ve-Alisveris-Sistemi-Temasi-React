@@ -19,9 +19,22 @@ import SloganBanner from '../Components/SloganBanner';
 import EventPlans from '../Components/EventPlans';
 import NewsMailTab from '../Components/NewsMailTab';
 import GiveFeedBack from '../Components/GiveFeedBack';
+import { fetchProduct } from '../store/productsSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function Main() {
+    const dispatch = useDispatch();
+
+    const isurunler = useSelector((state) => state.product.loading);
+
+    const urunler = useSelector((state)=> state.product.allProducts);
+   
+    useEffect(() => {
+        if (isurunler === "idle") {
+            dispatch(fetchProduct());
+        }
+    }, [dispatch, isurunler]);
 
     return (
         <>

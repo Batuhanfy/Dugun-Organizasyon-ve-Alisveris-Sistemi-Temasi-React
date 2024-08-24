@@ -145,16 +145,31 @@ export default function Header() {
                                     <div className="hide_cart_widget_if_empty">
                                         <div className="widget_shopping_cart_content">
                                             <ul className="cart_list product_list_widget ">
-                                                <li className="mini_cart_item"><a href="#" className="remove" title="Remove this item">×</a>
-                                                    <a href="#"><img src="images/product4-180x180.jpg"/>Flower Decor&nbsp; </a><span className="quantity">1 × <span className="woocommerce-Price-amount amount"><span className="woocommerce-Price-currencySymbol">$</span>55.00</span>
-                                                    </span>
-                                                </li>
-                                                <li className="mini_cart_item"><a href="#" className="remove" title="Remove this item">×</a>
-                                                    <a href="#"><img src="images/product1-180x180.jpg"/>Love Balloons&nbsp; </a><span className="quantity">1 × <span className="woocommerce-Price-amount amount"><span className="woocommerce-Price-currencySymbol">$</span>65.00</span>
-                                                    </span>
-                                                </li>
+
+
+                                                {sepet.map((item) => (
+                                                        
+                                                        <li className="mini_cart_item" key={item.product.id}>
+                                                             <a href="#" onClick={()=>{sepettenSil(item.product)}} className="remove" title="Remove this item">×</a>
+                                                            <a href="#"> <img src={item.product.img} alt="product4" />{item.product.name}</a> <span className="quantity">{item.quantity} × <span className="amount"><span className="woocommerce-Price-currencySymbol"></span>{item.product.price}</span> TL
+                                                            </span>
+                                                        </li>
+                                                    ))}
                                             </ul>
-                                            <p className="total"><strong>Subtotal:</strong> <span className="woocommerce-Price-amount amount"><span className="woocommerce-Price-currencySymbol">$</span>120.00</span>
+                                            <p className="total">
+                                                <strong>Subtotal:</strong>
+                                                 <span className="woocommerce-Price-amount amount">
+                                                    <span className="woocommerce-Price-currencySymbol">
+                                                    
+                                                    
+                                                    </span>
+                                                    {sepet.reduce(
+                                  (a, c) =>
+                                    a + c.product.price * c.quantity,
+                                  0
+                                )} TL
+                                                    
+                                                    </span>
                                             </p>
                                             <p className="buttons"><a href="#" className="button wc-forward">View Cart</a><a href="#" className="button checkout wc-forward">Checkout</a> </p>
                                         </div>

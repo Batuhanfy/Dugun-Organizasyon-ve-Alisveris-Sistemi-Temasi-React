@@ -3765,6 +3765,8 @@ li.opened > a > .open_child_menu:before {
 /* woo */
 .header_mobile .sidebar_cart {
     position: absolute;
+
+	background: white;
     top: 35px;
     left: auto;
     right: 0;

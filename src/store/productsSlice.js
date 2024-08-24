@@ -29,32 +29,32 @@ const productSlice = createSlice({
 
 
     },
-    kategorifiltresi: (state) => {
-      const { categoryName } = state;
+    kategorifiltresi: (state, action) => {
+      const categoryName = action.payload;
       switch (categoryName) {
         case "Balloons":
-          state.filteredProducts = [...state.allProducts].filter(product => product.category === "Balloons")
+          state.filteredProducts = state.allProducts.filter(product => product.category === "Balloons");
           break;
         case "Bouquets":
-          state.filteredProducts = [...state.allProducts].filter(product => product.category === "Bouquets")
+          state.filteredProducts = state.allProducts.filter(product => product.category === "Bouquets");
           break;
         case "DessertStands":
-          state.filteredProducts = [...state.allProducts].filter(product => product.category === "Dessert Stands")
+          state.filteredProducts = state.allProducts.filter(product => product.category === "Dessert Stands");
           break;
         case "FlowerDecor":
-          state.filteredProducts = [...state.allProducts].filter(product => product.category === "Flower Decor")
+          state.filteredProducts = state.allProducts.filter(product => product.category === "Flower Decor");
           break;
         case "LightsCandles":
-          state.filteredProducts = [...state.allProducts].filter(product => product.category === "Lights & Candles")
+          state.filteredProducts = state.allProducts.filter(product => product.category === "Lights & Candles");
           break;
         case "SignsSignatures":
-          state.filteredProducts = [...state.allProducts].filter(product => product.category === "Signs & Signatures")
+          state.filteredProducts = state.allProducts.filter(product => product.category === "Signs & Signatures");
           break;
         default:
-          state.filteredProducts = [...state.allProducts];
+          state.filteredProducts = state.allProducts;
           break;
       }
-    },
+    },    
     setSortOrder(state, action) {
       state.sortOrder = action.payload;
     },
@@ -104,5 +104,5 @@ const productSlice = createSlice({
 });
 
 // Reducer'ı export edin
-export const { filterProductsByPrice, setSortOrder, sortProducts } = productSlice.actions;
+export const { filterProductsByPrice, kategorifiltresi,setSortOrder, sortProducts } = productSlice.actions;
 export default productSlice.reducer;

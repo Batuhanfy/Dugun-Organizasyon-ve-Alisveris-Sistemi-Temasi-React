@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchProduct, filterProductsByPrice ,setSortOrder, sortProducts} from '../store/productsSlice';
+import { fetchProduct, filterProductsByPrice, setSortOrder, sortProducts, kategorifiltresi } from '../store/productsSlice';
 import { useEffect } from 'react';
 import { sepetEkle, fetchSepet, sepetSil } from '../store/sepetSlice';
 import Swal from 'sweetalert2';
@@ -10,34 +10,35 @@ import 'notie/dist/notie.css';
 
 export default function Shop() {
 
+    const [rowStatus, setRowStatus] = useState("flex");
     const [minPrice, setMinPrice] = useState("");
     const [maxPrice, setMaxPrice] = useState("");
 
 
     const filtreleHandler = (e) => {
         e.preventDefault();
-        if(Number(minPrice) > Number(maxPrice)){
+        if (Number(minPrice) > Number(maxPrice)) {
             Swal.fire({
                 title: 'Hata!',
                 text: 'Fiyat filtrelerken min fiyat daha az olmalıdır.',
                 icon: 'error',
                 confirmButtonText: 'Tamam'
-              });
-              
-        }else if(minPrice == "" && maxPrice == ""){
+            });
+
+        } else if (minPrice == "" && maxPrice == "") {
             Swal.fire({
                 title: 'Hata!',
                 text: 'Fiyat bilgisi giriniz.',
                 icon: 'error',
                 confirmButtonText: 'Tamam'
-              });
+            });
         }
-        else{
+        else {
             dispatch(filterProductsByPrice({ minPrice: Number(minPrice), maxPrice: Number(maxPrice) }));
 
         }
 
-     
+
     };
 
 
@@ -47,6 +48,18 @@ export default function Shop() {
 
 
     const sepete_ekle = (product) => {
+        Swal.fire({
+            title: 'Sepete Ekleniyor...',
+            allowOutsideClick: false,
+            didOpen: () => {
+              Swal.showLoading();
+          
+              // 1 saniye (1000ms) sonra otomatik olarak kapat
+              setTimeout(() => {
+                Swal.close();
+              }, 1000);
+            }
+          });
         dispatch(sepetEkle(product));
         console.log(sepet);
     }
@@ -54,29 +67,70 @@ export default function Shop() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchProduct());
-        dispatch(fetchSepet());
-    }, [dispatch]);
-
+        const fetchData = async () => {
+          await dispatch(fetchProduct()); 
+          await dispatch(fetchSepet());  
+        };
+      
+        fetchData();
+      }, [dispatch]);
 
     const sepettenSil = (product) => {
         console.log("sepetten siliniyor");
         console.log(product);
         dispatch(sepetSil(product));
+        Swal.fire({
+            title: 'Siliniyor...',
+            allowOutsideClick: false,
+            didOpen: () => {
+              Swal.showLoading();
+          
+              // 1 saniye (1000ms) sonra otomatik olarak kapat
+              setTimeout(() => {
+                Swal.close();
+              }, 1000);
+            }
+          });
     }
 
     const handleSortChange = (event) => {
         const newSortOrder = event.target.value;
+
         dispatch(setSortOrder(newSortOrder));
         dispatch(sortProducts());
-      };
 
-      const sortOrder = useSelector((state) => state.product.sortOrder);
 
-      const kategorisec = (categoryName)=>{
-       console.log(categoryName);
-       dispatch(kategorifiltresi(categoryName))
-      }
+        Swal.fire({
+            title: 'Sıralanıyor...',
+            allowOutsideClick: false,
+            didOpen: () => {
+              Swal.showLoading();
+          
+              setTimeout(() => {
+                Swal.close();
+              }, 1000);
+            }
+          });
+    };
+
+    const sortOrder = useSelector((state) => state.product.sortOrder);
+
+    const kategorisec = (categoryName) => {
+        console.log(categoryName);
+        dispatch(kategorifiltresi(categoryName))
+        Swal.fire({
+            title: 'Ürünler Yükleniyor...',
+            allowOutsideClick: false,
+            didOpen: () => {
+              Swal.showLoading();
+          
+              // 1 saniye (1000ms) sonra otomatik olarak kapat
+              setTimeout(() => {
+                Swal.close();
+              }, 1000);
+            }
+          });
+    }
 
     return (
 
@@ -98,12 +152,13 @@ export default function Shop() {
                                         <div className="mode_buttons">
                                             <form action="#" method="post">
                                                 <input type="hidden" name="lovestory_shop_mode" value="thumbs" />
-                                                <a href="shop.html" className="woocommerce_thumbs icon-th" title="Show products as thumbs"></a><a href="shop-list.html" className="woocommerce_list icon-th-list" title="Show products as list"></a>
+                                                <a href="#" className="woocommerce_thumbs icon-th"  onClick={() => { setRowStatus('flex') }}  title="Show products as thumbs"></a>
+                                                <a href="#" className="woocommerce_list icon-th-list" onClick={() => { setRowStatus('column') }} title="Show products as list"></a>
                                             </form>
                                         </div>
                                         <p className="woocommerce-result-count"> Toplamda {urunler.length} sonuç gösteriliyor.</p>
                                         <form className="woocommerce-ordering" method="get">
-                                        <select name="orderby" className="orderby" value={sortOrder} onChange={handleSortChange}>
+                                            <select name="orderby" className="orderby" value={sortOrder} onChange={handleSortChange}>
                                                 <option value="menu_order" selected='selected'>Varsayılan sıralama</option>
                                                 <option value="popularity">Popülerliğe Göre</option>
                                                 <option value="rating">Ürün derecesine göre</option>
@@ -112,26 +167,33 @@ export default function Shop() {
                                                 <option value="price-desc">En pahalıdan Ucuza</option>
                                             </select>
                                         </form>
-                                        <ul className="products">
-                                            {urunler.map((product) => (
-                                                <li className="product has-post-thumbnail column-1_2 last" key={product.id}>
-                                                    <div className="post_item_wrap">
-                                                        <div className="post_featured">
-                                                            <div className="post_thumb">
-                                                                <a className="hover_icon hover_icon_link" href="shop-single.html">
-                                                                    <img src={product.img} alt="product4" title="product4" />
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div className="post_content">
-                                                            <h3><a href="shop-single.html">{product.name}</a></h3> <span className="price"><span className="amount"><span className="woocommerce-Price-currencySymbol"></span>{product.price} TL</span>
-                                                            </span> <a rel="nofollow" href="#" className="button add_to_cart_button" onClick={() => sepete_ekle(product)}>Sepete Ekle</a>
+                                        <ul
+                                            className="products"
+                                            style={rowStatus === "column" ? {
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                alignItems: 'center'
 
+                                            } : { display: 'block' }}
+                                        >                                            {urunler.map((product) => (
+                                            <li className="product has-post-thumbnail column-1_2 last" key={product.id}>
+                                                <div className="post_item_wrap">
+                                                    <div className="post_featured">
+                                                        <div className="post_thumb">
+                                                            <a className="hover_icon hover_icon_link" href="shop-single.html">
+                                                                <img src={product.img} alt="product4" title="product4" />
+                                                            </a>
                                                         </div>
                                                     </div>
-                                                </li>
+                                                    <div className="post_content">
+                                                        <h3><a href="shop-single.html">{product.name}</a></h3> <span className="price"><span className="amount"><span className="woocommerce-Price-currencySymbol"></span>{product.price} TL</span>
+                                                        </span> <a rel="nofollow" href="#" className="button add_to_cart_button" onClick={() => sepete_ekle(product)}>Sepete Ekle</a>
 
-                                            ))}
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        ))}
 
 
                                         </ul>
@@ -202,26 +264,29 @@ export default function Shop() {
                                                     </div>
                                                 </div>
                                             </form>
-                                        </aside><aside className="widget woocommerce widget_product_tag_cloud">
-                                            <h5 className="widget_title">Etiketler</h5>
-                                            <div>
-                                                <a className="font-8pt" href='#' title='2 products'>beautiful</a>
-                                                <a className="font-8pt" href='#' title='2 products'>decorations</a>
-                                                <a className="font-8pt" href='#' title='2 products'>floristic</a>
-                                                <a className="font-8pt" href='#' title='2 products'>joy</a>
-                                                <a className="font-8pt" href='#' title='2 products'>love</a>
-                                                <a className="font-8pt" href='#' title='2 products'>roses</a>
-                                            </div>
                                         </aside><aside id="woocommerce_product_categories-2" className="widget woocommerce widget_product_categories">
-                                            <h5 className="widget_title">Product Categories</h5>
+                                            <h5 className="widget_title">Ürün Kategorileri</h5>
                                             <ul className="product-categories">
-                                                <li className="cat-item" onClick={()=>{kategorisec("Balloons")}}><a href="#">Balloons</a></li>
-                                                <li className="cat-item" onClick={()=>{kategorisec("Bouquets")}}><a href="#">Bouquets</a></li>
-                                                <li className="cat-item" onClick={()=>{kategorisec("DessertStands")}}><a href="#">Dessert Stands</a></li>
-                                                <li className="cat-item" onClick={()=>{kategorisec("FlowerDecor")}}><a href="#">Flower Decor</a></li>
-                                                <li className="cat-item" onClick={()=>{kategorisec("LightsCandles")}}><a href="#">Lights &amp; Candles</a></li>
-                                                <li className="cat-item" onClick={()=>{kategorisec("SignsSignatures")}}><a href="#">Signs &amp; Signatures</a></li>
+                                                <li className="cat-item" onClick={() => { kategorisec("Balloons") }}>
+                                                    <a href="javascript:void(0);">Balloons</a>
+                                                </li>
+                                                <li className="cat-item" onClick={() => { kategorisec("Bouquets") }}>
+                                                    <a href="javascript:void(0);">Bouquets</a>
+                                                </li>
+                                                <li className="cat-item" onClick={() => { kategorisec("DessertStands") }}>
+                                                    <a href="javascript:void(0);">Dessert Stands</a>
+                                                </li>
+                                                <li className="cat-item" onClick={() => { kategorisec("FlowerDecor") }}>
+                                                    <a href="javascript:void(0);">Flower Decor</a>
+                                                </li>
+                                                <li className="cat-item" onClick={() => { kategorisec("LightsCandles") }}>
+                                                    <a href="javascript:void(0);">Lights &amp; Candles</a>
+                                                </li>
+                                                <li className="cat-item" onClick={() => { kategorisec("SignsSignatures") }}>
+                                                    <a href="javascript:void(0);">Signs &amp; Signatures</a>
+                                                </li>
                                             </ul>
+
                                         </aside>
                                     </div>
                                 </div>
