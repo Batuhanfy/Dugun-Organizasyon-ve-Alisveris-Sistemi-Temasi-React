@@ -1,6 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
+
 
 export default function Footer() {
+    const rezervasyon_talebi_sayisi = useSelector((state)=>state.sepet.organizasyontalep.length);
+console.log(rezervasyon_talebi_sayisi);
   return (
     <>
                 
@@ -41,8 +46,14 @@ export default function Footer() {
                                </div>
                                <div className="sc_socials sc_socials_type_icons sc_socials_shape_round sc_socials_size_tiny">
                                    <div className="sc_socials_item"><a href="#" className="social_icons social_facebook"><span className="icon-facebook"></span></a></div><div className="sc_socials_item"><a href="#" className="social_icons social_twitter"><span className="icon-twitter"></span></a></div><div className="sc_socials_item"><a href="#" className="social_icons social_instagramm"><span className="icon-instagramm"></span></a></div><div className="sc_socials_item"><a href="#" className="social_icons social_gplus"><span className="icon-gplus"></span></a></div>
+                              
+                             
                                </div>
+                              
                            </div>
+                           <span>
+                                Sitemizde şuana kadar {rezervasyon_talebi_sayisi} adet rezervasyon talebi oluşturuldu.
+                              </span>
                        </aside>
                    </div>
                    

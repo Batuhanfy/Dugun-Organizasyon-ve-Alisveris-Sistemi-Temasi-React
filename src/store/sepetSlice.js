@@ -17,12 +17,17 @@ const sepetSlice = createSlice({
     name:"sepet",
     initialState:{
         sepettekiler:[],
+        organizasyontalep:[],
         error:null,
         loading:"idle"
     },
     reducers:{
         
-
+        setTalep: (state, action) => {
+            state.organizasyontalep = action.payload;
+            console.log("talep alındı");
+            console.log(state.organizasyontalep);
+          },
           sepetEkle: (state,action)=>{
        
             const product = action.payload;
@@ -88,5 +93,5 @@ const sepetSlice = createSlice({
 
     }
 });
-export const {sepetEkle,sepetSil} = sepetSlice.actions;
+export const {sepetEkle,sepetSil,setTalep } = sepetSlice.actions;
 export default sepetSlice.reducer;

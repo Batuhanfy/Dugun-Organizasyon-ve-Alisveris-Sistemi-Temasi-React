@@ -1,9 +1,10 @@
 import React from 'react'
 import { useEffect } from "react";
-import { fetchProduct } from '../store/productsSlice';
+
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
-
+import { fetchProduct, filterProductsByPrice, setSortOrder, sortProducts, kategorifiltresi } from '../store/productsSlice';
+import { sepetEkle, fetchSepet, sepetSil } from '../store/sepetSlice';
 
 export default function BuyLastItems() {
 

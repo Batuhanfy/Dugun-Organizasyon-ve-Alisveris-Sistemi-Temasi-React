@@ -65,14 +65,19 @@ export default function Shop() {
     }
 
     const dispatch = useDispatch();
+   const sepetloading = useSelector((state)=>state.sepet.status)
+
 
     useEffect(() => {
+        if(sepetloading == "idle"){
+            fetchData();
+        }
         const fetchData = async () => {
-          await dispatch(fetchProduct()); 
+        
           await dispatch(fetchSepet());  
         };
-      
-        fetchData();
+       dispatch(fetchProduct()); 
+       
       }, [dispatch]);
 
     const sepettenSil = (product) => {

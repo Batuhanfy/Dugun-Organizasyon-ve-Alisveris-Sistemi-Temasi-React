@@ -2839,6 +2839,7 @@ li.opened > a > .open_child_menu:before {
 }
 
 .top_panel_middle .contact_label.contact_phone{
+	font-family: Montserrat;
 	margin-top: 2px;
 	font-size: 1.143em;
 }
