@@ -60,12 +60,9 @@ export default function Header() {
                         <div className="content_wrap clearfix">
                             <nav className="menu_main_nav_area menu_hover_fade">
                                 <ul id="menu_main" className="menu_main_nav">
-                                    <li className="menu-item  menu-item-has-children current-menu-ancestor">
+                                    <li className="menu-item ">
                                         <a href="#"><span>Anasayfa</span></a>
-                                        <ul className="sub-menu fadeOutDown animated fast">
-                                            <li className="menu-item current-menu-item"><a href="index-2.html"><span>Home Fullwidth</span></a></li>
-                                            <li className="menu-item"><a href="home-boxed.html"><span>Home Boxed</span></a></li>
-                                        </ul>
+                                       
                                     </li>
                                     <li className="menu-item menu-item-has-children"><a href="#"><span>Hakkımızda</span></a>
                                         <ul className="sub-menu fadeOutDown animated fast">
