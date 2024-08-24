@@ -70,11 +70,8 @@ export default function Header() {
                                   
                                     <li className="menu-item"><a href="shop.html"><span>MAĞAZA</span></a></li>
                                     <li className="menu-item"><a href="our-team.html"><span>EKİBİMİZ</span></a></li>
-                                    <li className="menu-item menu-item-has-children "><a href="#"><span>HİZMETLERİMİZ</span></a>
-                                        <ul className="sub-menu fadeOutDown animated fast">
-                                            <li className="menu-item"><a href="services-our.html"><span>Our Services</span></a></li>
-                                            <li className="menu-item"><a href="services-single.html"><span>Single Service</span></a></li>
-                                        </ul>
+                                    <li className="menu-item "><a href="#"><span>HİZMETLERİMİZ</span></a>
+                                       
                                     </li>
                                     <li className="menu-item menu-item-has-children"><a href="#"><span>Blog</span></a>
                                         <ul className="sub-menu fadeOutDown animated fast">
