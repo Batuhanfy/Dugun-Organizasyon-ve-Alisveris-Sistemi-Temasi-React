@@ -128,75 +128,32 @@ export default function Header() {
                     <div className="panel_top">
                         <nav className="menu_main_nav_area">
                             <ul id="menu_mobile" className="menu_main_nav">
-                                <li className="menu-item menu-item-has-children current-menu-ancestor current-menu-parent"><a href="#"><span>Home</span></a>
-                                    <ul className="sub-menu">
-                                        <li className="menu-item current-menu-item"><a href="index-2.html"><span>Home Fullwidth</span></a></li>
-                                        <li className="menu-item"><a href="home-boxed.html"><span>Home Boxed</span></a></li>
-                                    </ul>
+                                <li className="menu-item menu-item-has-children current-menu-ancestor current-menu-parent">
+                                <Link to="/"><span>Anasayfa</span></Link>
+                                  
                                 </li>
-                                <li className="menu-item menu-item-has-children"><a href="#"><span>About</span></a>
-                                    <ul className="sub-menu">
-                                        <li className="menu-item"><a href="about-us.html"><span>About Us</span></a></li>
-                                        <li className="menu-item menu-item-has-children"><a href="#"><span>Portfolio</span></a>
-                                            <ul className="sub-menu">
-                                                <li className="menu-item"><a href="gallery-grid.html"><span>Grid</span></a></li>
-                                                <li className="menu-item"><a href="gallery-cobbles.html"><span>Cobbles</span></a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="menu-item  menu-item-has-children"><a href="#"><span>Features</span></a>
-                                    <ul className="sub-menu">
-                                        <li className="menu-item  menu-item-has-children"><a href="#"><span>Tools</span></a>
-                                            <ul className="sub-menu">
-                                                <li className="menu-item"><a href="features-shortcodes.html"><span>Shortcodes</span></a></li>
-                                                <li className="menu-item"><a href="features-typography.html"><span>Typography</span></a></li>
-                                            </ul>
-                                        </li>
-                                        <li className="menu-item menu-item-has-children"><a href="#"><span>Support</span></a>
-                                            <ul className="sub-menu">
-                                                <li className="menu-item"><a href="features-support.html"><span>Support</span></a></li>
-                                                
-                                                <li className="menu-item"><a href="features-video-tutorials.html"><span>Video Tutorials</span></a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="menu-item"><a href="shop.html"><span>Shop</span></a></li>
-                                <li className="menu-item"><a href="our-team.html"><span>Team</span></a></li>
-                                <li className="menu-item menu-item-has-children"><a href="#"><span>Services</span></a>
-                                    <ul className="sub-menu">
-                                        <li className="menu-item"><a href="services-our.html"><span>Our Services</span></a></li>
-                                        <li className="menu-item"><a href="services-single.html"><span>Single Service</span></a></li>
-                                    </ul>
-                                </li>
-                                <li className="menu-item menu-item-has-children"><a href="#"><span>Blog</span></a>
-                                    <ul className="sub-menu">
-                                        <li className="menu-item"><a href="blog-classNameic.html"><span>classNameic</span></a></li>
-                                        <li className="menu-item menu-item-has-children"><a href="#"><span>Style Masonry</span></a>
-                                            <ul className="sub-menu">
-                                                <li className="menu-item"><a href="blog-masonry-2-columns.html"><span>Masonry 2 Columns</span></a></li>
-                                                <li className="menu-item"><a href="blog-masonry-3-columns.html"><span>Masonry 3 Columns</span></a></li>
-                                            </ul>
-                                        </li>
-                                        <li className="menu-item menu-item-has-children"><a href="#"><span>Style Portfolio</span></a>
-                                            <ul className="sub-menu">
-                                                <li className="menu-item"><a href="blog-portfolio-2-columns.html"><span>Portfolio 2 Columns</span></a></li>
-                                                <li className="menu-item"><a href="blog-portfolio-3-columns.html"><span>Portfolio 3 Columns</span></a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="menu-item"><a href="contacts.html"><span>Contacts</span></a></li>
+                                <li className="menu-item"><Link to="/about-us"><span>Hakkımızda</span></Link>
+                                       
+                                       </li>
+                                     
+                                       <li className="menu-item">  <Link to="/shop"><span>MAĞAZA</span></Link></li>
+                                       <li className="menu-item">  <Link to="/our-team"><span>EKİBİMİZ</span></Link></li>
+                                       <li className="menu-item ">  <Link to="/our-services"><span>HİZMETLERİMİZ</span></Link>
+                                          
+                                       </li>
+                                       <li className="menu-item ">  <Link to="/blogs"><span>Blog</span></Link>
+                                          
+                                       </li>
+                                       <li className="menu-item">  <Link to="/contact"><span>İLETİŞİM</span></Link></li>
                             </ul>
                         </nav>
                     </div>
                     <div className="panel_middle">
                         <div className="contact_field contact_phone">
                              <span className="contact_icon icon-phone"></span>
-                             <span className="contact_label contact_phone">800-123-4567</span>
+                             <span className="contact_label contact_phone">212 654 48 45</span>
                              <span className="contact_icon icon-mail"></span>
-                             <span className="contact_label contact_email ">info@yoursite.com</span>
+                             <span className="contact_label contact_email ">iletisim@sevgievim.com</span>
                         </div>
                     </div>
                 </div>
