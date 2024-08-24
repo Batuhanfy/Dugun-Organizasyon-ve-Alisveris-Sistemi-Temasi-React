@@ -64,34 +64,10 @@ export default function Header() {
                                         <a href="#"><span>Anasayfa</span></a>
                                        
                                     </li>
-                                    <li className="menu-item menu-item-has-children"><a href="#"><span>Hakkımızda</span></a>
-                                        <ul className="sub-menu fadeOutDown animated fast">
-                                            <li className="menu-item"><a href="about-us.html"><span>About Us</span></a></li>
-                                            <li className="menu-item menu-item-has-children"><a href="#"><span>Portfolio</span></a>
-                                                <ul className="sub-menu">
-                                                    <li className="menu-item"><a href="gallery-grid.html"><span>Grid</span></a></li>
-                                                    <li className="menu-item"><a href="gallery-cobbles.html"><span>Cobbles</span></a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                    <li className="menu-item"><a href="#"><span>Hakkımızda</span></a>
+                                       
                                     </li>
-                                    <li className="menu-item menu-item-has-children"><a href="#"><span>Destekler</span></a>
-                                        <ul className="sub-menu fadeOutDown animated fast">
-                                            <li className="menu-item menu-item-has-children"><a href="#"><span>Tools</span></a>
-                                                <ul className="sub-menu">
-                                                    <li className="menu-item"><a href="features-shortcodes.html"><span>Shortcodes</span></a></li>
-                                                    <li className="menu-item"><a href="features-typography.html"><span>Typography</span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li className="menu-item menu-item-has-children"><a href="#"><span>Support</span></a>
-                                                <ul className="sub-menu fadeOutDown animated fast">
-                                                    <li className="menu-item"><a href="features-support.html"><span>Support</span></a></li>
-                                                    
-                                                    <li className="menu-item"><a href="features-video-tutorials.html"><span>Video Tutorials</span></a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                  
                                     <li className="menu-item"><a href="shop.html"><span>MAĞAZA</span></a></li>
                                     <li className="menu-item"><a href="our-team.html"><span>EKİBİMİZ</span></a></li>
                                     <li className="menu-item menu-item-has-children "><a href="#"><span>HİZMETLERİMİZ</span></a>
