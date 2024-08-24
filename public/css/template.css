@@ -46,7 +46,7 @@ h4 {
   margin-bottom: 1em;
 }
 h5 {
-  font-family: "Courgette", sans-serif;
+  font-family: "Montserrat";
   font-size: 1.429em;
   line-height: 1.25em;
   font-weight: 400;
@@ -54,7 +54,7 @@ h5 {
   margin-bottom: 0.84em;
 }
 h6 {
-  font-family: "PTSerif";
+  font-family: "Montserrat";
   font-size: 0.857em;
   line-height: 1.25em;
   font-weight: 700;
@@ -712,8 +712,7 @@ select {
   background-color: rgba(242,241,240,0.75);
 }
 .top_panel_middle .logo {
-  margin-top: 3.55em;
-  margin-bottom: 2.25em;
+
 }
 .logo .logo_text {
   font-size: 2.8571em;
