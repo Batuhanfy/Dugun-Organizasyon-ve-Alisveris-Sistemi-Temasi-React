@@ -64,7 +64,7 @@ export default function Header() {
                                         <a href="#"><span>Anasayfa</span></a>
                                        
                                     </li>
-                                    <li className="menu-item"><a href="#"><span>Hakkımızda</span></a>
+                                    <li className="menu-item"><Link to="/AboutUs"><span>Hakkımızda</span></Link>
                                        
                                     </li>
                                   
