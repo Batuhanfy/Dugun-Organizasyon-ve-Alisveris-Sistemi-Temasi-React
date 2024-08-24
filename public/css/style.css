@@ -6911,7 +6911,7 @@ h1 .m_text_column p, h2 .m_text_column p, h3 .m_text_column p, h4 .m_text_column
 
 /* 13.5 RevSlider Styles */
 .mainslider_1 {
-	padding-top:10px;
+	padding-top:60px;
 	padding-bottom: 10px;
      font-family: 'Courgette' !important;
 }
