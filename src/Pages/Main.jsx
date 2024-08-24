@@ -32,6 +32,7 @@ export default function Main() {
                 <div className="content">
                     <article className="post_item post_item_single page type-page">
                         <div className="post_content">
+                        <SloganBanner/>
                         <AboutUs/>
 
                 <Planning/>
@@ -200,7 +201,7 @@ export default function Main() {
                             <GalleryBanner/>
                            <QuotationTab/>
                        <ArticlesBlog/>
-                                <SloganBanner/>
+                          
                                 <EventPlans/>
                            <NewsMailTab/>
                           <GiveFeedBack/>

@@ -132,6 +132,7 @@ button,
 .comments_wrap .form-submit input[type="submit"], .comments_wrap .form-submit input[type="button"],
 .mc4wp-form input.emailer_submit,
 .cq-coverslider-navigation.btn-large .cq-coverslider-icon {
+	color: #555;
 	border-radius: 0;
 	-webkit-border-radius:0;
   -webkit-transition: all 0.3s ease 0s;
@@ -139,6 +140,9 @@ button,
   -ms-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+.breadcrumbs a{
+	color: #f5ffd7;
 }
 
 :active, :focus { outline:0; }
@@ -3946,9 +3950,27 @@ li.opened > a > .open_child_menu:before {
 	overflow:hidden;
 	padding: 7.37em 0;
 }
+.fade-enter {
+	opacity: 0;
+  }
+  
+  .fade-enter-active {
+	opacity: 1;
+	transition: opacity 300ms;
+  }
+  
+  .fade-exit {
+	opacity: 1;
+  }
+  
+  .fade-exit-active {
+	opacity: 0;
+	transition: opacity 300ms;
+  }
 .top_panel_title .page_title {
 			/* Remove to default */
 			font-size: 3.929em;
+			color:#fff;
 			padding: 0;	/* 0.6667em 0; */
 			text-align: center;
 			margin-top: 0.07em;
@@ -3984,10 +4006,12 @@ li.opened > a > .open_child_menu:before {
 .breadcrumbs .breadcrumbs_item {
 	display:inline-block;
 	vertical-align:top;
+	color:#fff;
 	white-space:nowrap; 
 }
 .post_navi .post_navi_item + .post_navi_item:before,
 .breadcrumbs .breadcrumbs_delimiter {
+	color: #fff;
 	display:inline-block;
 	position:relative;
 	margin: 0 2.5em;

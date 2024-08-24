@@ -943,7 +943,7 @@ select {
   color: #ffffff;
 }
 .scheme_original .top_panel_middle .contact_icon {
-  background-color: #860b06;
+  background-color: #eea25d;
 }
 .scheme_original .top_panel_style_2 .contact_phone > span.contact_us,
 .scheme_original .top_panel_wrap .contact_cart_label {
@@ -2597,6 +2597,7 @@ input[type="reset"],
 input[type="button"],
 button,
 .sc_button {
+  background: #ffe1e1;
   line-height: 1.2857em;
 }
 input[type="submit"],
@@ -2605,6 +2606,7 @@ input[type="button"],
 button,
 .sc_button.sc_button_style_filled {
   border: none;
+  background: #ffe1e1;
 }
 .scheme_original input[type="submit"],
 .scheme_original input[type="reset"],
