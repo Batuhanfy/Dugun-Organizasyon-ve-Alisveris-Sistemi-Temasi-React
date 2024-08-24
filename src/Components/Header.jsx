@@ -73,22 +73,8 @@ export default function Header() {
                                     <li className="menu-item "><a href="#"><span>HİZMETLERİMİZ</span></a>
                                        
                                     </li>
-                                    <li className="menu-item menu-item-has-children"><a href="#"><span>Blog</span></a>
-                                        <ul className="sub-menu fadeOutDown animated fast">
-                                            <li className="menu-item"><a href="blog-classNameic.html"><span>classNameic</span></a></li>
-                                            <li className="menu-item menu-item-has-children"><a href="#"><span>Style Masonry</span></a>
-                                                <ul className="sub-menu fadeOutDown animated fast">
-                                                    <li className="menu-item"><a href="blog-masonry-2-columns.html"><span>Masonry 2 Columns</span></a></li>
-                                                    <li className="menu-item"><a href="blog-masonry-3-columns.html"><span>Masonry 3 Columns</span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li className="menu-item menu-item-has-children"><a href="#"><span>Style Portfolio</span></a>
-                                                <ul className="sub-menu fadeOutDown animated fast">
-                                                    <li className="menu-item"><a href="blog-portfolio-2-columns.html"><span>Portfolio 2 Columns</span></a></li>
-                                                    <li className="menu-item"><a href="blog-portfolio-3-columns.html"><span>Portfolio 3 Columns</span></a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                    <li className="menu-item "><a href="#"><span>Blog</span></a>
+                                       
                                     </li>
                                     <li className="menu-item"><a href="contacts.html"><span>İLETİŞİM</span></a></li>
                                 </ul>
