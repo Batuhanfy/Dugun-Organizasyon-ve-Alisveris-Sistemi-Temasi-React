@@ -14,12 +14,21 @@ const productSlice = createSlice({
   name: "Product",
   initialState: {
     data: [],
-    allProduct:[],
-    filteredProduct:[],
+    allProducts:[],
+    filteredProducts:[],
     loading: "idle",
     error: null
   },
-  reducers: {},
+  reducers: {
+    filterProductsByPrice: (state,action)=>{
+      const { minPrice, maxPrice } = action.payload;
+      state.filteredProducts = state.allProducts.filter(
+        product => product.price >= minPrice && product.price <= maxPrice
+      );
+      
+    }
+
+  },
   extraReducers: (builder) => {
     builder
         .addCase(fetchProduct.pending, (state) => {
@@ -27,7 +36,8 @@ const productSlice = createSlice({
         })
         .addCase(fetchProduct.fulfilled, (state, action) => {
             state.status = "succeeded";
-            state.allProduct = action.payload;
+            state.allProducts = action.payload;
+            state.filteredProducts = action.payload;
         })
         .addCase(fetchProduct.rejected, (state, action) => {
             state.status = "rejected";
@@ -38,4 +48,5 @@ const productSlice = createSlice({
 });
 
 // Reducer'ı export edin
+export const {filterProductsByPrice} = productSlice.actions;
 export default productSlice.reducer;

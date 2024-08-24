@@ -1,6 +1,8 @@
 import {createSlice,createAsyncThunk} from '@reduxjs/toolkit'
 import axios from 'axios'
 import alertify from 'alertifyjs';
+import Swal from 'sweetalert2';
+
 
 export const fetchSepet = createAsyncThunk(
 "sepet/fetchSepet",
@@ -19,6 +21,8 @@ const sepetSlice = createSlice({
         loading:"idle"
     },
     reducers:{
+        
+
           sepetEkle: (state,action)=>{
        
             const product = action.payload;
@@ -28,14 +32,43 @@ const sepetSlice = createSlice({
             if(addedItem){
                 // ürün zaten ekli
                 alertify.error("ürün ekli");
-              
+                Swal.fire({
+                    title: 'Başarılı!',
+                    text: 'Ürün sepetinize +1 Adet eklendi.',
+                    icon: 'success',
+                    confirmButtonText: 'Tamam'
+                  });
+            
+                  addedItem.quantity+=1;
 
             }else {
-                // ürünü ekle
-                alertify.success(product.title + " favorilerinize eklendi!");
-                console.log("istek geldiii");
+                Swal.fire({
+                    title: 'Başarılı!',
+                    text: 'Ürün sepetinize eklendi.',
+                    icon: 'success',
+                    confirmButtonText: 'Tamam'
+                  });
+                  
+               
+                  sepet.push({'product':product,quantity:1} );
             }
+        state.sepettekiler=sepet;
+          },
 
+          sepetSil: (state,action) =>{
+            const product = action.payload;
+            let sepet = [...state.sepettekiler];
+
+           sepet = sepet.filter((c)=>c.product.id !== product.id);
+
+           Swal.fire({
+            title: 'Çıkartıldı',
+            text: 'Ürün sepetinizden silindi.',
+            icon: 'info',
+            confirmButtonText: 'Anladım'
+          });
+          
+            state.sepettekiler=sepet;
           }
 
     },
@@ -55,5 +88,5 @@ const sepetSlice = createSlice({
 
     }
 });
-export const {sepetEkle} = sepetSlice.actions;
+export const {sepetEkle,sepetSil} = sepetSlice.actions;
 export default sepetSlice.reducer;

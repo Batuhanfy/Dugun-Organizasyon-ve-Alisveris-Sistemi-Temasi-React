@@ -1,7 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchSepet,sepetEkle,sepetSil } from '../store/sepetSlice';
+
 
 export default function Header() {
+
+
+    const sepetteki_urun_sayisi= useSelector((state)=>state.sepet.sepettekiler.length);
+    const sepet = useSelector((state) => state.sepet.sepettekiler);
+
+    const urunler = useSelector((state) => state.product.allProduct);
+
+    const sepettenSil = (product)=>{
+        console.log("sepetten siliniyor");
+        console.log(product);
+        dispatch(sepetSil(product));
+    }
+
+    const dispatch=useDispatch();
+
+
+
   return (
     <>
               <div className="top_panel_fixed_wrap"></div>
@@ -26,7 +46,19 @@ export default function Header() {
                                         <span className="contact_icon icon-icon_cart"></span>
                                         <span className="contact_label contact_cart_label">Sepetindekiler:</span> 
                                         <span className="contact_cart_totals">
-                                        <span className="cart_items">(2)</span> - <span className="cart_summa">&#36;120.00</span>
+                                        <span className="cart_items">({sepetteki_urun_sayisi})</span> - <span className="cart_summa">
+                                      
+                              <span>
+                                
+                                {sepet.reduce(
+                                  (a, c) =>
+                                    a + c.product.price * c.quantity,
+                                  0
+                                )}
+                                 
+                              </span> TL
+                                          
+                                        </span>
                                         </span>
                                     </a>
                                        <ul className="widget_area sidebar_cart sidebar">
@@ -35,17 +67,26 @@ export default function Header() {
                                                 <div className="hide_cart_widget_if_empty">
                                                     <div className="widget_shopping_cart_content">
                                                         <ul className="cart_list product_list_widget ">
-                                                            <li className="mini_cart_item"> <a href="#" className="remove" title="Remove this item">×</a>
-                                                                <a href="#"><img src="images/product4-180x180.jpg"/>Flower Decor&nbsp; </a> <span className="quantity">1 × <span className="woocommerce-Price-amount amount"><span className="woocommerce-Price-currencySymbol">$</span>55.00</span>
-                                                                </span>
-                                                            </li>
-                                                            <li className="mini_cart_item"> <a href="#" className="remove" title="Remove this item">×</a>
-                                                                <a href="#"><img src="images/product1-180x180.jpg"/>Love Balloons&nbsp; </a> <span className="quantity">1 × <span className="woocommerce-Price-amount amount"><span className="woocommerce-Price-currencySymbol">$</span>65.00</span>
-                                                                </span>
-                                                            </li>
+                                                                       
+                                                    {sepet.map((item) => (
+                                                        
+                                                        <li className="mini_cart_item" key={item.product.id}>
+                                                             <a href="#" onClick={()=>{sepettenSil(item.product)}} className="remove" title="Remove this item">×</a>
+                                                            <a href="#"> <img src={item.product.img} alt="product4" />{item.product.name}</a> <span className="quantity">{item.quantity} × <span className="amount"><span className="woocommerce-Price-currencySymbol"></span>{item.product.price}</span> TL
+                                                            </span>
+                                                        </li>
+                                                    ))}
+                                                            
+                                                        
                                                         </ul>
                                                         
-                                                        <p className="total"><strong>Toplam:</strong> <span className="woocommerce-Price-amount amount"><span className="woocommerce-Price-currencySymbol">$</span>120.00</span>
+                                                        <p className="total"><strong>Toplam:</strong> <span className="woocommerce-Price-amount amount"><span className="woocommerce-Price-currencySymbol"></span>
+                                                        {sepet.reduce(
+                                  (a, c) =>
+                                    a + c.product.price * c.quantity,
+                                  0
+                                )} TL
+                                                        </span>
                                                         </p>
                                                         <p className="buttons"><a href="#" className="button wc-forward">Sepetim</a><a href="#" className="button checkout wc-forward">SATIN AL</a> </p>
                                                     </div>
