@@ -6,6 +6,7 @@ export const fetchBlogs = createAsyncThunk(
 
     async () =>{
         const response = await axios.get("/data.json");
+        console.log(response.data.blogs + "geldi");
         return response.data.blogs;
     }
 );
@@ -27,6 +28,7 @@ const blogSlice = createSlice({
         .addCase(fetchBlogs.fulfilled, (state,action)=>{
             state.status="ok";
             state.blogs= action.payload;
+         
         })
         .addCase(fetchBlogs.rejected, (state,action)=>{
             state.status="failed";

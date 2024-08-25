@@ -1,11 +1,25 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { fetchBlogs } from '../store/blogSlice';
 
 export default function ArticlesBlog() {
 
+
+    const blogdurum= useSelector((state)=>state.blog.status);
+    const dispatch = useDispatch();
+    useEffect(()=>{
+    if(blogdurum =="idle"){
+        dispatch(fetchBlogs);
+      
+    }
+
+    },[]);
+
+
+
     const bloglar = useSelector((state)=> state.blog.blogs);
-console.log(bloglar);
+    console.log(bloglar);
   return (
 <>
 <section className="no-col-padding">
