@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import {bulten} from '../store/dataSlice'
+import Swal from 'sweetalert2';
+
 
 export default function HaberMailTab() {
 const[mailaddress,setmailaddress]=useState("");
@@ -14,7 +16,16 @@ const dispatch = useDispatch();
 const handleSubmit=(e)=>{
     e.preventDefault();
 
-    alert(`Mail Adresi: ${mailaddress}`);
+  
+    Swal.fire({
+        title: 'Başarılı!',
+        text: 'Bültenimize kayıt oldunuz.',
+        icon: 'success',
+        confirmButtonText: 'Tamam'
+      });
+      
+
+      
     dispatch(bulten(mailaddress));
     
 }

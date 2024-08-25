@@ -41,7 +41,7 @@ export default function ArticlesBlog() {
                                                         <div className="post_item post_item_classNameic post_item_classNameic_3	post_format_standard odd">
                                                             <div className="post_featured">
                                                                 <div className="post_thumb" data-image="images/blog_img1.jpg" data-title="An occasion that joins two hearts in a symphony">
-                                                                    <a className="hover_icon hover_icon_link" href="blog-standart-post.html"><img className="post-image" alt="An occasion that joins two hearts in a symphony" src={item.img} /></a>
+                                                                   <Link to={'blog/'+item.slug}> <a className="hover_icon hover_icon_link" href="#"><img className="post-image" alt="An occasion that joins two hearts in a symphony" src={item.img} /></a></Link>
                                                                 </div>
                                                             </div>
 

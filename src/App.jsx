@@ -11,6 +11,7 @@ import OurServices from "./Pages/OurServices";
 import OurTeam from "./Pages/OurTeam";
 import Portfolio from "./Pages/Portfolio";
 import Shop from "./Pages/Shop";
+import BlogDetail from './Pages/BlogDetail';
 
 function App() {
   const location = useLocation();
@@ -28,6 +29,7 @@ function App() {
             <Route path="/" element={<Main />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/blogs" element={<BlogsAll />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/our-services" element={<OurServices />} />
             <Route path="/our-team" element={<OurTeam />} />

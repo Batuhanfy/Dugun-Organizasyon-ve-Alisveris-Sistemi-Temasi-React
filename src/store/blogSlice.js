@@ -17,9 +17,23 @@ const blogSlice = createSlice({
     initialState:{
         status:"idle",
         blogs:[],
+        filteredblogs:[],
         error:null
     },
-    reducers:{},
+    reducers:{
+        filtreleBlogs:(state,action)=>{
+            const aramaTerimi = action.payload.toLowerCase(); 
+
+            const bloglar = [...state.blogs];
+        
+            const filteredBlogs = bloglar.filter(blog => 
+                blog.title.toLowerCase().includes(aramaTerimi)
+            );
+        
+            state.filteredBlogs = filteredBlogs;
+            console.log("filtrelendi");
+        }
+    },
     extraReducers: (builder) =>{
         builder 
         .addCase(fetchBlogs.pending, (state) =>{
@@ -28,7 +42,7 @@ const blogSlice = createSlice({
         .addCase(fetchBlogs.fulfilled, (state,action)=>{
             state.status="ok";
             state.blogs= action.payload;
-         
+            state.filteredblogs= action.payload;
         })
         .addCase(fetchBlogs.rejected, (state,action)=>{
             state.status="failed";
@@ -37,4 +51,5 @@ const blogSlice = createSlice({
     }
 });
 
+export const {filtreleBlogs} = blogSlice.actions;
 export default blogSlice.reducer;
