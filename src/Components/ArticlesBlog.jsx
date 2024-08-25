@@ -1,7 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 export default function ArticlesBlog() {
+
+    const bloglar = useSelector((state)=> state.blog.blogs);
+console.log(bloglar);
   return (
 <>
 <section className="no-col-padding">
@@ -15,6 +19,7 @@ export default function ArticlesBlog() {
                                                             <h3 className="sc_blogger_title sc_item_title sc_item_title_without_descr">Blogdan Makaleler</h3>
                                                             <h6 className="sc_blogger_subtitle sc_item_subtitle">Blog</h6>
                                                             <div className="isotope_wrap" data-columns="3">
+
 
                                                                 <div className="isotope_item isotope_item_classNameic isotope_item_classNameic_3 isotope_column_3">
 
