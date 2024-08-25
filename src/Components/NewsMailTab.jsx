@@ -1,6 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import {bulten} from '../store/dataSlice'
 
 export default function HaberMailTab() {
+const[mailaddress,setmailaddress]=useState("");
+
+const handleChange=(e)=>{
+    setmailaddress(e.target.value);
+}
+
+const dispatch = useDispatch();
+
+const handleSubmit=(e)=>{
+    e.preventDefault();
+
+    alert(`Mail Adresi: ${mailaddress}`);
+    dispatch(bulten(mailaddress));
+    
+}
+
+
   return (
 <>
 <section className="no-col-padding">
@@ -17,9 +36,9 @@ export default function HaberMailTab() {
                                 <div className="column-1_2 sc_column_item even">
                                     <div className="m_text_column m_content_element">
                                         <div className="m_wrapper">
-                                            <form id="mc4wp-form-1" className="mc4wp-form mc4wp-form-341" method="post" data-id="341" data-name="">
+                                            <form id="mc4wp-form" onSubmit={handleSubmit} className="mc4wp-form mc4wp-form-341" method="post" data-id="341" data-name="">
                                                 <div className="mc4wp-form-fields">
-                                                    <input type="email" name="EMAIL" placeholder="E-posta Adresinizi Girin" className="emailer_input" required />
+                                                    <input type="email" name="EMAIL" onChange={handleChange}  placeholder="E-posta Adresinizi Girin" className="emailer_input" required />
                                                     <input type="submit" className="emailer_submit" value="Gönder" />
                                                     <div className="hide">
                                                         <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" />

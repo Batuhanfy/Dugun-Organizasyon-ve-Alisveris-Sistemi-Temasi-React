@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { contact } from '../store/dataSlice';
 
@@ -17,6 +17,7 @@ export default function GeriBildirimVer() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
@@ -24,16 +25,27 @@ export default function GeriBildirimVer() {
 
         console.log('Form Verisi:', formData);
 
-        dispatch(contact(formData));
+        if(formData.email === "" || formData.username === "" || formData.message === ""){
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Formu doldurunuz.',
+                icon: 'error',
+                confirmButtonText: 'Tamam'
+              });
+              
+        }else {
+            dispatch(contact(formData));
+       
+            Swal.fire({
+                title: 'Başarılı!',
+                text: 'En kısa sürede size geri dönüş sağlayacağız.',
+                icon: 'success',
+                confirmButtonText: 'Tamam'
+              });
+        }
+       
 
-        Swal.fire({
-            title: 'Başarılı!',
-            text: 'En kısa sürede size geri dönüş sağlayacağız.',
-            icon: 'success',
-            confirmButtonText: 'Tamam'
-          });
 
-          
 
 
     };
@@ -51,7 +63,7 @@ export default function GeriBildirimVer() {
                                             <div className="sc_form sc_form_style_form_1 aligncenter sc_home-param-type-g">
                                                 <h3 className="sc_form_title sc_item_title sc_item_title_without_descr">Bize Geri Bildirim Verin</h3>
                                                 <h6 className="sc_form_subtitle sc_item_subtitle">iletişim formu</h6>
-                                                <form className="sc_input_hover_default" onSubmit={handleSubmit}>
+                                                <form   id="reactForm" className="sc_input_hover_default" onSubmit={handleSubmit}>
                                                     <div className="sc_form_info columns_wrap">
                                                         <div className="sc_form_item sc_form_field label_over column-1_2">
                                                             <input
@@ -89,7 +101,6 @@ export default function GeriBildirimVer() {
                                                     <div className="sc_form_item sc_form_button">
                                                         <button type="submit">Mesaj Gönder</button>
                                                     </div>
-                                                    <div className="result sc_infobox"></div>
                                                 </form>
                                             </div>
                                         </div>

@@ -14,12 +14,29 @@ const dataSlice = createSlice({
     initialState: {
         data: [],
         status: "idle",
+        contact:[],
+        bultenabone:[],
         error: null,
     },
     reducers: {
 contact: (state,action)=>{
-    state.contact = action.payload;
-    console.log("Form bilgisi geldi");
+    let newcontact = [...state.contact];
+    newcontact.push(action.payload);
+    state.contact=newcontact;
+    console.log(state.contact);
+},
+bulten: (state,action)=>{
+  const yeniabone = action.payload;
+  console.log("Yeni bülten abonesi: "+yeniabone);
+
+  let bultenaboneleri= [...state.bultenabone];
+  bultenaboneleri.push(yeniabone);
+
+  state.bultenabone = bultenaboneleri;
+
+ 
+
+  
 }
 
     },
@@ -39,5 +56,5 @@ contact: (state,action)=>{
     },
 });
 
-export const {contact} = dataSlice.actions;
+export const {contact,bulten} = dataSlice.actions;
 export default dataSlice.reducer;
