@@ -119,80 +119,95 @@
           "title": "2024 Düğün Modası",
           "slug": "2024-dugun-modasi",
           "description": "2024 yılı için en trend düğün kıyafetleri ve aksesuarları.",
-          "min-desc": "Düğün modasında öne çıkan trendler.",
+          "mindesc": "Düğün modasında öne çıkan trendler.",
           "author": "Elif Yılmaz",
           "commentcount": 8,
-          "date": "2024-01-15"
+          "date": "2024-01-15",
+          "img":"images/blog_img1-370x240.jpg"
         },
         {
           "id": 2,
           "title": "Düğün Mekanı Seçerken Dikkat Edilmesi Gerekenler",
           "slug": "dugun-mekana-secim",
           "description": "Düğün mekanının seçiminde nelere dikkat etmeniz gerektiği hakkında bilgiler.",
-          "min-desc": "Düğün mekanları için ipuçları.",
+          "mindesc": "Düğün mekanları için ipuçları.",
           "author": "Ali Demir",
           "commentcount": 12,
-          "date": "2024-02-20"
+          "date": "2024-02-20",
+          "img":"images/blog_img2-370x240.jpg"
+
         },
         {
           "id": 3,
           "title": "Etkileyici Düğün Davetiyeleri Nasıl Tasarlanır?",
           "slug": "dugun-davetiyeleri-tasarimi",
           "description": "Etkileyici ve şık düğün davetiyeleri tasarlamak için yaratıcı fikirler.",
-          "min-desc": "Düğün davetiyeleri için tasarım önerileri.",
+          "mindesc": "Düğün davetiyeleri için tasarım önerileri.",
           "author": "Zeynep Kaya",
           "commentcount": 5,
-          "date": "2024-03-05"
+          "date": "2024-03-05",
+          "img":"images/blog_img3-370x240.jpg"
+
         },
         {
           "id": 4,
           "title": "Düğün Fotoğrafçısı Seçmenin Önemi",
           "slug": "dugun-fotografcisi-secimi",
           "description": "Unutulmaz anılarınızı ölümsüzleştirmek için doğru düğün fotoğrafçısını seçmenin önemi.",
-          "min-desc": "Düğün fotoğrafçısı seçiminde dikkat edilmesi gerekenler.",
+          "mindesc": "Düğün fotoğrafçısı seçiminde dikkat edilmesi gerekenler.",
           "author": "Mehmet Can",
           "commentcount": 7,
-          "date": "2024-04-10"
+          "date": "2024-04-10",
+          "img":"images/blog_img4.jpg"
+
         },
         {
           "id": 5,
           "title": "Düğün Organizasyonunda Bütçe Yönetimi",
           "slug": "dugun-butce-yonetimi",
           "description": "Düğün organizasyonunda bütçenizi etkili bir şekilde nasıl yöneteceğiniz hakkında ipuçları.",
-          "min-desc": "Düğün bütçesi nasıl planlanır?",
+          "mindesc": "Düğün bütçesi nasıl planlanır?",
           "author": "Ayşe Demir",
           "commentcount": 6,
-          "date": "2024-05-15"
+          "date": "2024-05-15",
+          "img":"images/blog_img5.jpg"
+
         },
         {
           "id": 6,
           "title": "Düğün İçin En Güzel Mekan Dekorasyon Fikirleri",
           "slug": "dugun-mekan-dekorasyon-fikirleri",
           "description": "Düğün mekanınızı nasıl daha şık ve özel hale getirebileceğiniz hakkında dekorasyon fikirleri.",
-          "min-desc": "Mekan dekorasyonu için öneriler.",
+          "mindesc": "Mekan dekorasyonu için öneriler.",
           "author": "Gözde Yalçın",
           "commentcount": 10,
-          "date": "2024-06-20"
+          "date": "2024-06-20",
+          "img":"images/blog_img6.jpg"
+
         },
         {
           "id": 7,
           "title": "Düğün Cake Design ve Pasta Trendleri",
           "slug": "dugun-pasta-trendleri",
           "description": "Düğün pastalarındaki en son tasarımlar ve trendler.",
-          "min-desc": "Düğün pastası için ilham verici tasarımlar.",
+          "mindesc": "Düğün pastası için ilham verici tasarımlar.",
           "author": "Emre Karaman",
           "commentcount": 9,
-          "date": "2024-07-25"
+          "date": "2024-07-25",
+          "img":"images/blog_img7.jpg"
+
         },
         {
           "id": 8,
           "title": "Düğün İçin En Güzel Müzik Seçenekleri",
           "slug": "dugun-muzik-secenekleri",
           "description": "Düğün gününüz için seçebileceğiniz en güzel müzik türleri ve şarkılar.",
-          "min-desc": "Düğün müziği için öneriler.",
+          "mindesc": "Düğün müziği için öneriler.",
           "author": "Ahmet Yurt",
           "commentcount": 4,
-          "date": "2024-08-30"
+          "date": "2024-08-30",
+          "img":"images/blog_img8.jpg"
+
         }
       ]
     

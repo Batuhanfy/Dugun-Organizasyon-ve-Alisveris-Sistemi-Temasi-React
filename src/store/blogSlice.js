@@ -6,7 +6,7 @@ export const fetchBlogs = createAsyncThunk(
 
     async () =>{
         const response = await axios.get("/data.json");
-        console.log(response.data.blogs + "geldi");
+
         return response.data.blogs;
     }
 );
