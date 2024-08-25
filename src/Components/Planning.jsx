@@ -1,6 +1,14 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
+import WeddingRequestModal from '../Components/Modal'; 
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
 export default function Planning() {
+    const [modalOpen, setModalOpen] = useState(false);
+    const[countOrg,setcountOrg]= useState(0);
+
+    const openModal = () => setModalOpen(true);
+    const closeModal = () => setModalOpen(false);
     return (
         <>
             <section className="no-col-padding">
@@ -25,7 +33,7 @@ export default function Planning() {
                                                         </div>
                                                         <div className="sc_services_item_content">
                                                             <h4 className="sc_services_item_title"><a href="services-our.html">Çiçekler &amp; Still</a></h4>
-                                                            <div className="sc_services_item_description"> <a href="services-our.html" className="sc_button sc_button_square sc_button_style_hovered sc_button_size_small">order now</a> </div>
+                                                            <div className="sc_services_item_description"> <Link to='/shop'><div className="sc_button sc_button_square sc_button_style_hovered sc_button_size_small">Alışverişe Başla</div></Link> </div>
                                                         </div>
                                                     </div>
                                                 </div><div className="column-1_3 column_padding_bottom">
@@ -37,8 +45,12 @@ export default function Planning() {
                                                         </div>
                                                         <div className="sc_services_item_content">
                                                             <h4 className="sc_services_item_title"><a href="shop.html">Düğün Planlamanız</a></h4>
-                                                            <div className="sc_services_item_description"> <a href="shop.html" className="sc_button sc_button_square sc_button_style_hovered sc_button_size_small">Hemen Planla</a> </div>
+                                                            <div className="sc_services_item_description"> <a href="#" onClick={openModal} className="sc_button sc_button_square sc_button_style_hovered sc_button_size_small">Hemen Planla</a> </div>
                                                         </div>
+
+                           
+                       
+                          <WeddingRequestModal isOpen={modalOpen} onClose={closeModal} guncelle={setcountOrg} />
                                                     </div>
                                                 </div><div className="column-1_3 column_padding_bottom">
                                                     <div className="sc_services_item odd">
@@ -49,7 +61,7 @@ export default function Planning() {
                                                         </div>
                                                         <div className="sc_services_item_content">
                                                             <h4 className="sc_services_item_title"><a href="shop.html">İkram &amp; Dekorasyon</a></h4>
-                                                            <div className="sc_services_item_description"> <a href="shop.html" className="sc_button sc_button_square sc_button_style_hovered sc_button_size_small">Hemen Planla</a> </div>
+                                                            <div className="sc_services_item_description"> <Link to='/shop'><div className="sc_button sc_button_square sc_button_style_hovered sc_button_size_small">Alışverişe Başla</div></Link> </div>
                                                         </div>
                                                     </div>
                                                 </div>

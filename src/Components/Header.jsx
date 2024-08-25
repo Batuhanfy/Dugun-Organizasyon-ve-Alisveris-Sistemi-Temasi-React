@@ -37,8 +37,8 @@ export default function Header() {
                                 </div>
                                 <div className="column-3_5 contact_logo">
                                     <div className="logo">
-                                        <a href="#"><img src="images/logo.png" className="logo_main" alt=""/>
-                                        <img src="images/logo.png" className="logo_fixed" alt=""/></a>
+                                      <Link to='/'>  <a href="#"><img src="images/logo.png" className="logo_main" alt=""/>
+                                        <img src="images/logo.png" className="logo_fixed" alt=""/></a></Link>
                                     </div>
                                 </div>
                                 <div className="column-1_5 contact_field contact_cart">

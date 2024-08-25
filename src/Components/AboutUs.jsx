@@ -7,7 +7,7 @@ import '../swipercss.css';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-
+import { Link } from 'react-router-dom';
 import { motion } from "framer-motion"
 import { useEffect } from "react";
 import Planning from '../Components/Planning';
@@ -31,7 +31,7 @@ export default function AboutUs() {
                                                                     <div className="m_wrapper">
                                                                         <p>Düğününüzün her anını hayalinizdeki gibi planlayın. Biz, en özel gününüzü unutulmaz kılmak için tüm detaylarla ilgileniyoruz, siz sadece anın tadını çıkarın.</p>
                                                                     </div>
-                                                                </div> <a href="#" className="sc_button sc_button_square sc_button_style_filled sc_button_size_medium sc_home-margin-type-d">Daha Fazlası</a></div><div className="column-4_9 sc_column_item even span_4">
+                                                                </div><Link to='/about-us'> <div className="sc_button sc_button_square sc_button_style_filled sc_button_size_medium sc_home-margin-type-d">Daha Fazlası</div></Link></div><div className="column-4_9 sc_column_item even span_4">
                                                                 <div className="cq-coverslider  navigation-overlay-right tinyshadow grapefruit " data-imagemaxheight="300" data-buttonbackground="" data-buttonhoverbackground="#222F46" data-contentbackground="" data-contentcolor="" data-arrowcolor="" data-arrowhovercolor="" data-delaytime="2">
                                                                     <div className="cq-coverslider-area btn-large square">
                                                                         <div className="cq-coverslider-cover">

@@ -28,12 +28,7 @@ export default function EtkinlikPlanlari() {
                                                             <li>Yaka Çiçekleri</li>
                                                         </ul>
                                                     </div>
-                                                    <div className="sc_price_block_money">
-                                                        <div className="sc_price"><span>başlayan fiyatlarla </span><span className="sc_price_currency">₺</span><span className="sc_price_money">399</span><span className="sc_price_info"><span className="sc_price_penny">.00</span><span className="sc_price_period_empty"></span></span>
-                                                        </div>
-                                                    </div>
-                                                    <div className="sc_price_block_link"><a href="shop.html" className="sc_button sc_button_square sc_button_style_hovered sc_button_size_small">hemen sipariş ver</a>
-                                                    </div>
+                                               
                                                 </div>
                                             </div>
                                             <div className="column-1_3 sc_column_item even">
@@ -48,12 +43,7 @@ export default function EtkinlikPlanlari() {
                                                             <li>Koridor Sıra İşaretçileri</li>
                                                         </ul>
                                                     </div>
-                                                    <div className="sc_price_block_money">
-                                                        <div className="sc_price"><span>başlayan fiyatlarla </span><span className="sc_price_currency">₺</span><span className="sc_price_money">799</span><span className="sc_price_info"><span className="sc_price_penny">.00</span><span className="sc_price_period_empty"></span></span>
-                                                        </div>
-                                                    </div>
-                                                    <div className="sc_price_block_link"><a href="shop.html" className="sc_button sc_button_square sc_button_style_hovered sc_button_size_small">hemen sipariş ver</a></div>
-                                                </div>
+                                                   </div>
                                             </div>
                                             <div className="column-1_3 sc_column_item odd">
                                                 <div className="sc_price_block sc_price_block_style_1">
@@ -67,12 +57,7 @@ export default function EtkinlikPlanlari() {
                                                             <li>Masa ve Pasta Dekorasyonu</li>
                                                         </ul>
                                                     </div>
-                                                    <div className="sc_price_block_money">
-                                                        <div className="sc_price"><span>başlayan fiyatlarla </span><span className="sc_price_currency">₺</span><span className="sc_price_money">999</span><span className="sc_price_info"><span className="sc_price_penny">.00</span><span className="sc_price_period_empty"></span></span>
-                                                        </div>
-                                                    </div>
-                                                    <div className="sc_price_block_link"><a href="shop.html" className="sc_button sc_button_square sc_button_style_hovered sc_button_size_small">hemen sipariş ver</a></div>
-                                                </div>
+                                                   </div>
                                             </div>
                                         </div>
                                     </div>

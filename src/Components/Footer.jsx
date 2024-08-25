@@ -52,7 +52,6 @@ console.log(rezervasyon_talebi_sayisi);
                               
                            </div>
                            <span>
-                                Sitemizde şuana kadar {rezervasyon_talebi_sayisi} adet rezervasyon talebi oluşturuldu.
                               </span>
                        </aside>
                    </div>

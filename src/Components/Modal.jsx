@@ -5,7 +5,7 @@ import { setTalep } from '../store/sepetSlice'
 
 import Swal from 'sweetalert2';
 
-const WeddingRequestModal = ({ isOpen, onClose }) => {
+const WeddingRequestModal = ({ isOpen, onClose,guncelle }) => {
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     name: '',
@@ -36,6 +36,7 @@ const WeddingRequestModal = ({ isOpen, onClose }) => {
   const handleSubmit = (e) => {
 
     e.preventDefault();
+    guncelle(1);
     Swal.fire({
         title: 'Başarılı! Talebiniz Alındı',
         text: 'En yakın zamanda sizinle iletişime geçeceğiz.',

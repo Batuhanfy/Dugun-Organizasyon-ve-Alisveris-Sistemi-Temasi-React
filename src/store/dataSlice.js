@@ -16,7 +16,13 @@ const dataSlice = createSlice({
         status: "idle",
         error: null,
     },
-    reducers: {},
+    reducers: {
+contact: (state,action)=>{
+    state.contact = action.payload;
+    console.log("Form bilgisi geldi");
+}
+
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchData.pending, (state) => {
@@ -33,4 +39,5 @@ const dataSlice = createSlice({
     },
 });
 
+export const {contact} = dataSlice.actions;
 export default dataSlice.reducer;

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function GalleryBanner() {
   return (
@@ -18,7 +19,7 @@ export default function GalleryBanner() {
                                                                     <div className="m_wrapper">
                                                                         <p>Çiçeklerin özel etkinlik ve toplantıların dekorasyonunda büyük rol oynaması nedeniyle çiçekçilik işi, kurumsal ve sosyal etkinlik dünyasında önemli bir pazara sahiptir.</p>
                                                                     </div>
-                                                                </div> <a href="gallery-grid.html" className="sc_button sc_button_square sc_button_style_filled sc_button_size_large sc_home-margin-type-g" >Galerimizi Gör</a>
+                                                                </div><Link to='/portfolio'> <a href="gallery-grid.html" className="sc_button sc_button_square sc_button_style_filled sc_button_size_large sc_home-margin-type-g" >Galerimizi Gör</a></Link>
                                                             </div>
                                                         </div>
                                                     </div>

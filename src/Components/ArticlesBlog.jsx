@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ArticlesBlog() {
   return (
@@ -93,7 +94,7 @@ export default function ArticlesBlog() {
                                                                 </div>
 
                                                             </div>
-                                                            <div className="sc_blogger_button sc_item_button"><a href="blog-masonry-3-columns.html" className="sc_button sc_button_square sc_button_style_filled sc_button_size_medium">Daha Fazla</a></div>
+                                                            <div className="sc_blogger_button sc_item_button"><Link to='/blogs'><a href="blog-masonry-3-columns.html" className="sc_button sc_button_square sc_button_style_filled sc_button_size_medium">Daha Fazla</a></Link></div>
                                                         </div>
                                                     </div>
                                                 </div>
