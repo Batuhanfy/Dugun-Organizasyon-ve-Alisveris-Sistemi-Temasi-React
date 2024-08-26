@@ -30,7 +30,7 @@ const blogSlice = createSlice({
                 blog.title.toLowerCase().includes(aramaTerimi)
             );
         
-            state.filteredBlogs = filteredBlogs;
+            state.filteredblogs = filteredBlogs;
             console.log("filtrelendi");
         }
     },
