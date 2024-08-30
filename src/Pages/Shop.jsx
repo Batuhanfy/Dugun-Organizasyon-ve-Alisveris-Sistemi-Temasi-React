@@ -185,9 +185,9 @@ export default function Shop() {
                                                 <div className="post_item_wrap">
                                                     <div className="post_featured">
                                                         <div className="post_thumb">
-                                                            <a className="hover_icon hover_icon_link" href="shop-single.html">
+                                                            <div className="" href="shop-single.html">
                                                                 <img src={product.img} alt="product4" title="product4" />
-                                                            </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className="post_content">

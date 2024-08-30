@@ -64,7 +64,7 @@ export default function BuyLastItems() {
 <div className="post_item_wrap">
     <div className="post_featured">
         <div className="post_thumb">
-            <a className="hover_icon hover_icon_link" href="shop-single.html"> <img src={item.img} className="attachment-shop_catalog size-shop_catalog post-image" alt="product4" title="product4" sizes="(max-width: 555px) 100vw, 555px" /> </a>
+            <a className="" href="shop-single.html"> <img src={item.img} className="attachment-shop_catalog size-shop_catalog post-image" alt="product4" title="product4" sizes="(max-width: 555px) 100vw, 555px" /> </a>
         </div>
     </div>
     <div className="post_content">

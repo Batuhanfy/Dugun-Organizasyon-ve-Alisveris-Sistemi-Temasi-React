@@ -76,7 +76,7 @@ export default function Header() {
                               </span>
                             </p>
                             <p className="buttons">
-                              <Link to="/cart" className="button wc-forward">Sepetim</Link>
+                              <Link to="/shop" className="button wc-forward">Sepetim</Link>
                               <Link to="/checkout" className="button checkout wc-forward">SATIN AL</Link>
                             </p>
                           </div>
