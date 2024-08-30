@@ -64,7 +64,7 @@ export default function BuyLastItems() {
 <div className="post_item_wrap">
     <div className="post_featured">
         <div className="post_thumb">
-            <a className="" href="shop-single.html"> <img src={item.img} className="attachment-shop_catalog size-shop_catalog post-image" alt="product4" title="product4" sizes="(max-width: 555px) 100vw, 555px" /> </a>
+          <img src={item.img} className="attachment-shop_catalog size-shop_catalog post-image" alt="product4" title="product4" sizes="(max-width: 555px) 100vw, 555px" /> 
         </div>
     </div>
     <div className="post_content">
