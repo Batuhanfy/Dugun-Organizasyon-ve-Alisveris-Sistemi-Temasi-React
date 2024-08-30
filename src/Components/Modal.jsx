@@ -141,13 +141,13 @@ const WeddingRequestModal = ({ isOpen, onClose,guncelle }) => {
 
           <div style={{ marginBottom: '15px' }}>
             <label>
-              Düğün Mekanı:
+              Salon Tercihininiz:
               <input
                 type="text"
                 name="venue"
                 value={formData.venue}
                 onChange={handleChange}
-                placeholder="Düğün Mekanının Adı"
+                placeholder="Hangi Tip Salonumuzu Tercih Ediyorsunuz?"
                 style={{ width: '100%', padding: '8px', marginTop: '5px' }}
               />
             </label>

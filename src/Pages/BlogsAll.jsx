@@ -1,6 +1,7 @@
 import React, { useEffect ,useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchBlogs, filtreleBlogs } from '../store/blogSlice';
+import { Link } from 'react-router-dom';
 
 export default function BlogsAll() {
 
@@ -52,7 +53,7 @@ if(blogdurum=="idle"){
 
                         {bloglar.map((item)=>(
     <article className="post_item post_item_excerpt" key={item.id}>
-    <h3 className="post_title"><a href="blog-standart-post.html">{item.title}</a></h3>
+    <h3 className="post_title"> <Link to={'/blog/'+item.slug}>{item.title}</Link></h3>
     <div className="post_info"> 
        <span className="post_info_item post_info_posted"> <a href="blog-standart-post.html" className="post_info_date">{item.date}</a></span> 
        <span className="post_info_item post_info_posted_by">By <a href="#" className="post_info_author">{item.author}</a></span> 
@@ -60,13 +61,13 @@ if(blogdurum=="idle"){
     </div>
     <div className="post_featured">
         <div className="post_thumb" data-image="images/post-1.jpg" data-title="The First Day of the Rest of Their Lives">
-            <a className="hover_icon hover_icon_link" href="blog-standart-post.html"><img className="post-image" alt="The First Day of the Rest of Their Lives" src={item.img}/></a>
+            <Link to={'/blog/'+item.slug}><div className="hover_icon hover_icon_link" href="blog-standart-post.html"><img className="post-image" alt="The First Day of the Rest of Their Lives" src={item.img}/></div></Link>
         </div>
     </div>
     
     <div className="post_content clearfix">
         <div className="post_descr">
-            <p>{item.mindesc}</p><a href="blog-standart-post.html" className="sc_button sc_button_square sc_button_style_filled sc_button_size_small">Read more</a> </div>
+            <p>{item.mindesc}</p> <Link to={'/blog/'+item.slug}><a href="blog-standart-post.html" className="sc_button sc_button_square sc_button_style_filled sc_button_size_small">Read more</a></Link> </div>
     </div>
     
 </article>
@@ -85,19 +86,11 @@ if(blogdurum=="idle"){
                     <div className="sidebar widget_area scheme_original">
                         <div className="sidebar_inner widget_area_inner">
                           <aside  className="widget widget_search">
-                                <h5 className="widget_title">Search</h5>
+                                <h5 className="widget_title">Ara</h5>
                                 <form method="post" onSubmit={handleSubmit} className="search_form" action="#">
                                     <input type="text" onChange={handleChange} className="search_field" placeholder="Search" name="search" />
                                     <button type="submit" className="search_button icon-search" href="#"></button>
                                 </form>
-                            </aside><aside  className="widget widget_archive">
-                                <h5 className="widget_title">Archive</h5>
-                                <ul>
-                                    <li><a href='#'>August 2016</a></li>
-                                    <li><a href='#'>June 2016</a></li>
-                                    <li><a href='#'>May 2016</a></li>
-                                    <li><a href='#'>April 2016</a></li>
-                                </ul>
                             </aside>
                         </div>
                     </div>

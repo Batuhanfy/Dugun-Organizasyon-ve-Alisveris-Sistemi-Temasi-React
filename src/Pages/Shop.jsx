@@ -157,8 +157,8 @@ export default function Shop() {
                                         <div className="mode_buttons">
                                             <form action="#" method="post">
                                                 <input type="hidden" name="lovestory_shop_mode" value="thumbs" />
-                                                <a href="#" className="woocommerce_thumbs icon-th"  onClick={() => { setRowStatus('flex') }}  title="Show products as thumbs"></a>
-                                                <a href="#" className="woocommerce_list icon-th-list" onClick={() => { setRowStatus('column') }} title="Show products as list"></a>
+                                                <span className="woocommerce_thumbs icon-th " style={{marginRight:"10px"}}  onClick={() => { setRowStatus('flex') }}  title="Show products as thumbs"></span>
+                                                <span className="woocommerce_list icon-th-list" onClick={() => { setRowStatus('column') }} title="Show products as list"></span>
                                             </form>
                                         </div>
                                         <p className="woocommerce-result-count"> Toplamda {urunler.length} sonuç gösteriliyor.</p>

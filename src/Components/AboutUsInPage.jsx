@@ -56,9 +56,7 @@ export default function AboutUs() {
                           <p>Düğününüzün her anını hayalinizdeki gibi planlayın. Biz, en özel gününüzü unutulmaz kılmak için tüm detaylarla ilgileniyoruz, siz sadece anın tadını çıkarın.</p>
                         </div>
                       </div>
-                      <Link to='/about-us'>
-                        <div className="sc_button sc_button_square sc_button_style_filled sc_button_size_medium sc_home-margin-type-d">Daha Fazlası</div>
-                      </Link>
+    
                     </div>
                     <div className="column-4_9 sc_column_item even span_4">
                       <div className="cq-coverslider navigation-overlay-right tinyshadow grapefruit" data-imagemaxheight="300" data-buttonbackground="" data-buttonhoverbackground="#222F46" data-contentbackground="" data-contentcolor="" data-arrowcolor="" data-arrowhovercolor="" data-delaytime="2">

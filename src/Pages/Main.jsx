@@ -22,8 +22,6 @@ import GiveFeedBack from '../Components/GiveFeedBack';
 import { fetchProduct } from '../store/productsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
-
-
 export default function Main() {
 
 
@@ -220,7 +218,7 @@ export default function Main() {
                             <BuyLastItems />
                             <GalleryBanner />
                             <QuotationTab />
-                            <ArticlesBlog />
+                     
 
                             <EventPlans />
                             <NewsMailTab />

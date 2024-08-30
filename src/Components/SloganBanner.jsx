@@ -27,16 +27,16 @@ export default function SloganBanner() {
                           
                           </h3>
                           <h5 className='sc_title sc_title_underline sc_align_center' style={{color:'#fff',fontWeight:'bold'}}>
-                          Şuana kadar rezervasyon talebi : {countOrg}
+                          Şuana kadar {countOrg} kişi rezervasyon talebi oluşturdu. Siz de bize katılın!
                           </h5>
-                          <a
-                            href="#"
+                          <div
+                           
                             onClick={openModal}
                             className="sc_button sc_button_square sc_button_style_filled sc_button_size_large aligncenter sc_home-param-type-e"
                           >
                             Rezervasyon Talebi
                             
-                          </a>
+                          </div>
                        
                           <WeddingRequestModal isOpen={modalOpen} onClose={closeModal} guncelle={setcountOrg} />
                         </div>

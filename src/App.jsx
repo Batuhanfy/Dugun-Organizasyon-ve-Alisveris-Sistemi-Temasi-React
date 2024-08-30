@@ -12,6 +12,7 @@ import OurTeam from "./Pages/OurTeam";
 import Portfolio from "./Pages/Portfolio";
 import Shop from "./Pages/Shop";
 import BlogDetail from './Pages/BlogDetail';
+import ScrollToTop from './Components/ScrollToUp';
 
 function App() {
   const location = useLocation();
@@ -19,7 +20,9 @@ function App() {
   return (
     <>
       <Header />
+      <ScrollToTop/>
       <TransitionGroup>
+     
         <CSSTransition
           key={location.key}
           classNames="fade"
@@ -29,7 +32,7 @@ function App() {
             <Route path="/" element={<Main />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/blogs" element={<BlogsAll />} />
-            <Route path="/blog/:id" element={<BlogDetail />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/our-services" element={<OurServices />} />
             <Route path="/our-team" element={<OurTeam />} />
