@@ -25,8 +25,7 @@ const sepetSlice = createSlice({
         
         setTalep: (state, action) => {
             state.organizasyontalep = action.payload;
-            console.log("talep alındı");
-            console.log(state.organizasyontalep);
+
           },
           sepetEkle: (state,action)=>{
        

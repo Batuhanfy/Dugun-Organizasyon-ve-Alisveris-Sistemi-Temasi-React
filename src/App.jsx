@@ -13,6 +13,7 @@ import Portfolio from "./Pages/Portfolio";
 import Shop from "./Pages/Shop";
 import BlogDetail from './Pages/BlogDetail';
 import ScrollToTop from './Components/ScrollToUp';
+import Checkout from './Pages/Checkout';
 
 function App() {
   const location = useLocation();
@@ -38,6 +39,7 @@ function App() {
             <Route path="/our-team" element={<OurTeam />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="*" element={<Main />} />
           </Routes>
         </CSSTransition>

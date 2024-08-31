@@ -37,7 +37,6 @@ export default function BuyLastItems() {
             }
           });
         dispatch(sepetEkle(product));
-        console.log(sepet);
     }
 
 
