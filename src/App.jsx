@@ -21,7 +21,7 @@ function App() {
   return (
     <>
        <Header />
-      <ScrollToTop/>
+       <ScrollToTop/>
       <TransitionGroup>
      
         <CSSTransition
